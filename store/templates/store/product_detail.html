@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ product.name }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+        .box { background: white; padding: 30px; border-radius: 8px; max-width: 500px; }
+        h1 { margin-top: 0; }
+        a { color: #0077cc; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        {% if product.image %}
+            <img src="{{ product.image.url }}" width="100%" style="border-radius:6px">
+        {% endif %}
+        <h1>{{ product.name }}</h1>
+        <p>{{ product.description }}</p>
+        <p><strong>Fiyat:</strong> {{ product.price }} ₺</p>
+        <p><strong>Stok:</strong> {{ product.stock }}</p>
+        <a href="{% url 'home' %}">← Geri dön</a>
+    </div>
+</body>
+</html>
